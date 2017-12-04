@@ -55,4 +55,30 @@ public class Deck extends Hand {
     }
 
 
+    public void deal (Hand[] hands, int perHand)
+    {
+        for(int i=0;i<perHand;i++)
+        {
+            for (int j=0;j<hands.length;j++)
+            {
+                this.give(cards.get(0),hands[j]);
+            }
+        }
+    }
+
+    public void deal(Hand hand,int perHand)
+    {
+        //deal to a single hand
+        for (int i = 0; i<perHand;i++)
+        {
+            hand.give(cards.get(0),hand);
+        }
+    }
+
+    public void flipCard(Card c)
+    {
+        c.flipCard();
+
+    }
+
 }

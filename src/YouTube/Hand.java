@@ -50,4 +50,32 @@ public class Hand {
     }
 
 
+
+    //Return the total points of a hand
+    public int getTotal()
+    {
+        int totalPoints = 0;
+        boolean hasAce = false;
+        //Get total points (any Aces by default will be worth 1)
+
+        for(int i = 0; i<cards.size();i++)
+        {
+            totalPoints += cards.get(i).getRank();
+            //Check to see if the card is an Ace
+            if(cards.get(i).printRank()=="Ace")
+            {
+                hasAce= true;
+            }
+            //Make Ace worth 11 if total points <=11
+
+            if(hasAce&&totalPoints<=11)
+            {
+                totalPoints+=10;// Add 10 more to Ace
+
+            }
+        }
+        return totalPoints;
+    }
+
+
 }

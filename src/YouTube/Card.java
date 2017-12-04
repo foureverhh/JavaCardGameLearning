@@ -13,7 +13,7 @@ public class Card
     {
         this.suit=suit;
         this.rank=rank;
-        isFaceUp = true;
+        isFaceUp = false;
     }
 
     //public Methods
@@ -27,6 +27,11 @@ public class Card
         return rank.getRank();
     }
 
+    public String printRank()
+    {
+        //get rank as a string (primary for Aces)
+        return rank.printRank();
+    }
     public String toString()
     {
         String str = "";
@@ -43,6 +48,10 @@ public class Card
         return str;
     }
 
+    public void flipCard()
+    {
+       isFaceUp = true;
+    }
 
 
 }
