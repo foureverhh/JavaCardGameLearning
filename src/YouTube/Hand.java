@@ -26,15 +26,40 @@ public class Hand {
 
     public String showHand()
     {
+        /*Show cards and their total points,but
+        * only show total points if All cards are face up*/
+
         String str ="";
+        boolean allFaceUp = true;
+
         for(Card c:cards)
         {
             str += c.toString()+"\n";
+            if(!c.isFaceUp)
+            {
+                allFaceUp= false;
+
+            }
         }
+
+        //If all cards are face up, show total
+        if(allFaceUp)
+        {
+            str+="Total points = " + getTotal()+ "\n";
+        }
+
         return str;
     }
 
-    public boolean give(Card card,Hand otherHand)
+    public void flipCards()
+    {
+        for(Card c : cards)
+        {
+            c.flipCard();
+        }
+    }
+
+    public boolean give(Card card, Hand otherHand)
     {
         if(!cards.contains(card))
         {

@@ -36,15 +36,58 @@ public class Main {
 
         Deck deck1 = new Deck();
         deck1.populate();
-        System.out.println("Here is everything in hand: ");
-        System.out.println(deck1.showHand());
-        System.out.println();
 
+        /*System.out.println("Here is everything in hand: ");
+        System.out.println(deck1.showHand());
+        System.out.println();*/
+
+
+        //shuffle a deck
         deck1.shuffle();
+        /*
         System.out.println("Here is everything in hand: ");
         System.out.println(deck1.showHand());
+*/
 
-        System.out.println(deck1.cards.size());
+        //Create our playing hands
+        Hand h1,h2,h3,dealer;
+        h1 = new Hand();
+        h2 = new Hand();
+        h3 = new Hand();
+        dealer = new Hand();
+
+        Hand[] hands ={h1,h2,h3};
+
+        //Deal cards to our hands
+        deck1.deal(hands, 2);
+
+        //Deal two cards to dealer
+        deck1.deal(dealer,2);
+
+        for(Card c: dealer.cards)
+        {
+            c.flipCard();
+            System.out.println(c);
+        }
+
+        for(int i=0;i<hands.length;i++)
+        {
+            hands[i].flipCards();
+            System.out.println("Hand"+(i+1)+"'s cards are:");
+            System.out.println(hands[i].showHand());
+        }
+
+
+        //Flip the dealer's first card
+
+        dealer.cards.get(0).flipCard();
+
+        //Flip the dealer's cards
+        System.out.println("Dealer's cards are:");
+        System.out.println("\n Dealer's Cards:\n"+ dealer.showHand());
+
+
+
 
 
 

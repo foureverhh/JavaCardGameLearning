@@ -5,7 +5,7 @@ public class Card
 //    Create our suit (enum type)
     private Suit suit;
     private Rank rank;
-    private boolean isFaceUp;
+    public boolean isFaceUp; //Set isFaceUp from private to public
 
     //constructor
 
@@ -52,6 +52,7 @@ public class Card
     {
        isFaceUp = true;
     }
+
 
 
 }

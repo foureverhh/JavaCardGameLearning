@@ -38,7 +38,7 @@ public class Deck extends Hand {
         {
             //swap a random card between the beginning
             //and last card of the loop
-            System.out.println(i);
+            //System.out.println(i);
 
             int pick = rand.nextInt(i);                                   //??
             Card randomCard = cards.get(pick);                            //??
@@ -47,7 +47,7 @@ public class Deck extends Hand {
             cards.set(i,randomCard);//??
             cards.set(pick,lastCard);//??
 
-            System.out.println("The "+i+" is "+ randomCard.toString());
+            //System.out.println("The "+i+" is "+ randomCard.toString());
 
             //challenge A:try to condense this to a 3 line of code
             //challenge B:try to cut the deck, split the deck at a random place. Then take the top half and swap the botton half.
@@ -71,7 +71,7 @@ public class Deck extends Hand {
         //deal to a single hand
         for (int i = 0; i<perHand;i++)
         {
-            hand.give(cards.get(0),hand);
+            this.give(cards.get(0), hand);
         }
     }
 
